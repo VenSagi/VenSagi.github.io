@@ -1742,7 +1742,7 @@ body.offcanvas .colorlib-nav-toggle {
 .btn-warning.btn-outline:hover,
 .btn-warning.btn-outline:focus,
 .btn-warning.btn-outline:active {
-	background: #f0ad4e;
+	background: #3DA5D9;
 	color: #fff;
 }
 
@@ -2070,7 +2070,7 @@ ul {
 }
 
 .submenu li:hover {
-	background: rgba(255, 255, 0, 0.705);
+	background: #3DA5D9;
 	box-shadow: -1px 1px 51px -20px rgba(0,0,0,1);
 	border-radius: 5px;
 	color: #fff;
