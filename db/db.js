@@ -61,7 +61,6 @@ export default {
 	],
 	projects: {
 		web: [
-			/*
 			{
 				projectName: "Programming Diaries",
 				image: "images/programmingdiaries.png",
@@ -100,10 +99,8 @@ export default {
 				preview: "https://vinaysomawat.github.io/Resume-Builder",
 				techStack: ["HTML", "Bootstrap", "JavaScript"],
 			},
-			*/
 		],
 		software: [
-			/*
 			{
 				projectName: "Pizza Ordering ChatBot",
 				image: "images/pizzaorderchatbot.png",
@@ -129,10 +126,8 @@ export default {
 				preview: "https://github.com/vinaysomawat/Bill-Generator",
 				techStack: ["Tkinter", "Openxlpy", "Python"],
 			},
-			*/
 		],
-		videogame: [
-			/*
+		android: [
 			{
 				projectName: "NITW-CSE",
 				image: "images/nitwcse.jpg",
@@ -149,10 +144,8 @@ export default {
 				preview: "https://github.com/vinaysomawat/CareerHigh-Android",
 				techStack: ["JAVA", "XML", "Android"],
 			},
-			*/
 		],
 		freelance: [
-			/*
 			{
 				projectName: "SnylloAir.com",
 				image: "images/snylloair.png",
@@ -170,7 +163,6 @@ export default {
 					"https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
 				techStack: ["Android", "JAVA", "Play Store"],
 			},
-			*/
 		],
 	},
 	experience: [
