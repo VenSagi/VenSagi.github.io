@@ -2,15 +2,15 @@ export default {
 	bio: {
 		about: {
 			text: [
-				"Howdy!",
-				"I'm Venkat Sagi, a Freshman Engineering student at Texas A&M University currently pursuing a degree in Computer Science. Aspiring programmer passionate About backend web development. Through my coding experience and programming skills, I aim to learn and do great things in the computer science field.",
-				"I'm a developer, seeking an internship opportunity at to gain practical experience and further develop my skills in the field of backend development.",
-				"I love to do art, play video-games, and travel.",
+				"Hi &#128075;",
+				"I'm Vinay Somawat. I’m currently working as a Software Engineer at Biofourmis India specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
+				"I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
+				"I love to read, listen to music, and travel.",
 			],
 		},
 		contact: {
 			text: [
-				"If you would like to get in touch with me, or to just say hi, feel free to send me an email. My email address is: varmasvsee@gmail.com",
+				"If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: vinaysomawat40@gmail.com",
 			],
 		},
 	},
@@ -72,7 +72,6 @@ export default {
 	],
 	projects: {
 		web: [
-			/*
 			{
 				projectName: "Programming Diaries",
 				image: "images/programmingdiaries.png",
@@ -111,10 +110,8 @@ export default {
 				preview: "https://vinaysomawat.github.io/Resume-Builder",
 				techStack: ["HTML", "Bootstrap", "JavaScript"],
 			},
-			*/
 		],
 		software: [
-			/*
 			{
 				projectName: "Pizza Ordering ChatBot",
 				image: "images/pizzaorderchatbot.png",
@@ -140,20 +137,26 @@ export default {
 				preview: "https://github.com/vinaysomawat/Bill-Generator",
 				techStack: ["Tkinter", "Openxlpy", "Python"],
 			},
-			*/
 		],
-		videogame: [
+		android: [
 			{
-				projectName: "Video Game (View-doo)",
-				image: "",
+				projectName: "NITW-CSE",
+				image: "images/nitwcse.jpg",
 				summary:
-					"Developed an endless rogue-like type video game named \"View-Doo\".",
-				preview: "",
-				techStack: ["GML", "GameMaker Studio 2"],
+					"The Application display details of Department courses, reference books, research, publication and faculty profile.",
+				preview: "https://github.com/vinaysomawat/NITW-CSE",
+				techStack: ["JAVA", "XML", "Android"],
+			},
+			{
+				projectName: "CareerHigh-App",
+				image: "images/carrerhigh.png",
+				summary:
+					"The Application display the webpages of website careerhigh.in in android devices.",
+				preview: "https://github.com/vinaysomawat/CareerHigh-Android",
+				techStack: ["JAVA", "XML", "Android"],
 			},
 		],
 		freelance: [
-			/*
 			{
 				projectName: "SnylloAir.com",
 				image: "images/snylloair.png",
@@ -171,7 +174,6 @@ export default {
 					"https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
 				techStack: ["Android", "JAVA", "Play Store"],
 			},
-			*/
 		],
 	},
 	experience: [
