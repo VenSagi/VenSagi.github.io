@@ -2,10 +2,17 @@ export default {
 	bio: {
 		about: {
 			text: [
+<<<<<<< HEAD
 				"Howdy!",
 				"I'm Venkat Sagi, a Freshman Engineering student at Texas A&M University currently pursuing a degree in Computer Science. Aspiring programmer passionate About backend web development. Through my coding experience and programming skills, I aim to learn and do great things in the computer science field.",
 				"I'm a developer, seeking an internship opportunity at to gain practical experience and further develop my skills in the field of backend development.",
 				"I love to do art, play video-games, and travel.",
+=======
+				"Hi &#128075;",
+				"I'm Vinay Somawat. I’m currently working as a Software Engineer at Biofourmis India specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
+				"I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
+				"I love to read, listen to music, and travel.",
+>>>>>>> parent of 12c39eb (2nd)
 			],
 		},
 		contact: {
