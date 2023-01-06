@@ -77,8 +77,8 @@ h1 {
 }
 
 mark {
-	background: #ff0;
-	color: #000;
+	background: #3DA5D9;
+	color: #201D20;
 }
 
 small {
@@ -859,7 +859,7 @@ samp {
 code {
 	padding: 2px 4px;
 	font-size: 90%;
-	color: #c7254e;
+	color: #2364AA;
 	background-color: #f9f2f4;
 	border-radius: 4px;
 }
