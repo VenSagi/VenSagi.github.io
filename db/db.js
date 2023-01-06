@@ -194,7 +194,7 @@ export default {
 			icon: "graduation-cap",
 		},
 		{
-			title: "Highschool Diploma",
+			title: "Highschool Diploma                            ",
 			duration: "August 2018 - May 2022",
 			subtitle: "Lone Star High School - Frisco, Texas",
 			details: [
