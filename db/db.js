@@ -1,6 +1,11 @@
 export default {
 	bio: {
 		about: {
+			data: [
+				{
+					func: "enableDarkMode()",
+				},
+			],
 			text: [
 
 				"Howdy!",
