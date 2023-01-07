@@ -216,6 +216,20 @@ export default {
 	],
 	footer: [
 		{
+			label: "Contact",
+			data: [
+				{
+					text: "Email",
+					func: "mailto:varmasvse@gmail.com",
+				},
+				{
+					text: "Resume",
+					link: "https://drive.google.com/file/d/1QZM8rnMvAIhnAVfFSxR4xh6RQxn2IxEh/view?usp=sharing",
+				},
+			],
+		},
+		
+		{
 			label: "Dev Profiles",
 			data: [
 				{
@@ -225,20 +239,6 @@ export default {
 				{
 					text: "LeetCode",
 					link: "https://leetcode.com/H1ghPuR/",
-				},
-			],
-		},
-		
-		{
-			label: "Resources",
-			data: [
-				{
-					text: "Enable Dark/Light Mode",
-					func: "enableDarkMode()",
-				},
-				{
-					text: "Resume",
-					link: "https://drive.google.com/file/d/1QZM8rnMvAIhnAVfFSxR4xh6RQxn2IxEh/view?usp=sharing",
 				},
 			],
 		},
