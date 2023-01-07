@@ -220,7 +220,7 @@ export default {
 			data: [
 				{
 					text: "Email",
-					func: "mailto:varmasvse@gmail.com",
+					link: "mailto:varmasvse@gmail.com",
 				},
 				{
 					text: "Resume",
