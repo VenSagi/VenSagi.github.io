@@ -228,7 +228,7 @@ export default {
 				},
 			],
 		},
-		/*
+		
 		{
 			label: "Resources",
 			data: [
@@ -237,16 +237,12 @@ export default {
 					func: "enableDarkMode()",
 				},
 				{
-					text: "Print this page",
-					func: "window.print()",
-				},
-				{
-					text: "Clone this page",
-					link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+					text: "Resume",
+					link: "https://drive.google.com/file/d/1QZM8rnMvAIhnAVfFSxR4xh6RQxn2IxEh/view?usp=sharing",
 				},
 			],
 		},
-		*/
+		
 		{
 			label: "Social Profiles",
 			data: [
