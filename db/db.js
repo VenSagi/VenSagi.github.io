@@ -219,19 +219,16 @@ export default {
 			label: "Dev Profiles",
 			data: [
 				{
-					text: "Stackoverflow",
-					link: "https://stackoverflow.com/users/8461233/vinay-somawat",
-				},
-				{
 					text: "GitHub",
-					link: "https://github.com/vinaysomawat",
+					link: "https://github.com/VenSagi",
 				},
 				{
 					text: "LeetCode",
-					link: "https://leetcode.com/somawatvinay/",
+					link: "https://leetcode.com/H1ghPuR/",
 				},
 			],
 		},
+		/*
 		{
 			label: "Resources",
 			data: [
@@ -249,28 +246,25 @@ export default {
 				},
 			],
 		},
+		*/
 		{
 			label: "Social Profiles",
 			data: [
 				{
-					text: "Linkedin",
-					link: "https://www.linkedin.com/in/vinaysomawat/",
+					text: "LinkedIn",
+					link: "https://www.linkedin.com/in/venkat-sagi/",
 				},
 				{
-					text: "Twitter",
-					link: "https://twitter.com/thesigmakid",
-				},
-				{
-					text: "Buy me a coffee",
-					link: "https://www.buymeacoffee.com/r194dME8y",
+					text: "Instagram",
+					link: "https://www.instagram.com/mr.venkatam/",
 				},
 			],
 		},
 		{
 			label: "copyright-text",
 			data: [
-				"Made with &hearts; by Vinay Somawat.",
-				"&copy; No Copyrights. Feel free to use this template."
+				"Made by Venkat Sagi.",
+				"Inspired by &hearts; Vinay Somawat."
 			],
 		},
 	],
