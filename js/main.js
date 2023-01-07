@@ -1,6 +1,8 @@
 (function () {
 	"use strict";
 
+	enableDarkMode()
+
 	var isMobile = {
 		Android: function () {
 			return navigator.userAgent.match(/Android/i);

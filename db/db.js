@@ -1,9 +1,4 @@
 export default {
-	data: [
-		{
-			func: "enableDarkMode()",
-		},
-	],
 	bio: {
 		about: {
 			text: [
@@ -203,7 +198,7 @@ export default {
 				"Pursuing Bachelor's Degree in Computer Science",
 				"Current Coursework: Engineering 102, Mathematics 151, Chemistry 107, Chemistry 117",
 			],
-			tags: [
+			tags: ["Engineering", "Mathematics", "Chemistry"
 			],
 			icon: "graduation-cap",
 		},
