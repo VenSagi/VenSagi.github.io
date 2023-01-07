@@ -1,11 +1,11 @@
 export default {
+	data: [
+		{
+			func: "enableDarkMode()",
+		},
+	],
 	bio: {
 		about: {
-			data: [
-				{
-					func: "enableDarkMode()",
-				},
-			],
 			text: [
 
 				"Howdy!",
