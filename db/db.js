@@ -63,7 +63,7 @@ export default {
 		web: [
 			
 			{
-				projectName: "Programming Diaries",
+				projectName: "No Web Projects Yet",
 				image: "images/programmingdiaries.png",
 				summary:
 					"Developed a full stack blog application to provide content on techical topics across the internet with admin interface.",
@@ -106,7 +106,7 @@ export default {
 		software: [
 			
 			{
-				projectName: "Pizza Ordering ChatBot",
+				projectName: "No Software Projects Yet",
 				image: "images/pizzaorderchatbot.png",
 				summary:
 					"ChatBot using Dialogflow, Firebase database which stores the chat data in the realtime database.",
@@ -157,7 +157,7 @@ export default {
 		freelance: [
 			
 			{
-				projectName: "SnylloAir.com",
+				projectName: "No Freelance Projects Yet",
 				image: "images/snylloair.png",
 				summary:
 					"Developed a company website to showcase the purpose, services and products provided by the company to audience.",
