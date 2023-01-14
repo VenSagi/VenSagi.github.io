@@ -61,7 +61,6 @@ export default {
 	],
 	projects: {
 		web: [
-			
 			/*
 			{
 				projectName: "Programming Diaries",
@@ -104,7 +103,6 @@ export default {
 			*/
 		],
 		software: [
-			
 			/*
 			{
 				projectName: "Pizza Ordering ChatBot",
@@ -134,7 +132,6 @@ export default {
 			*/
 		],
 		android: [
-			
 			/*
 			{
 				projectName: "NITW-CSE",
@@ -155,7 +152,6 @@ export default {
 			*/
 		],
 		freelance: [
-			
 			/*
 			{
 				projectName: "SnylloAir.com",
