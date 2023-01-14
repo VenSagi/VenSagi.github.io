@@ -67,8 +67,7 @@ export default {
 				//image: "",
 				//summary: "",
 				//preview: "",
-				//techStack: [
-				],
+				techStack: [],
 			},
 			/*
 			{
@@ -102,10 +101,8 @@ export default {
 			{
 				projectName: "No Software Projects Yet",
 				image: "",
-				summary:
-					"",
-				preview:
-					"",
+				summary: "",
+				preview: "",
 				techStack: [],
 			},
 			/*
@@ -153,8 +150,7 @@ export default {
 			{
 				projectName: "No Freelance Projects Yet",
 				image: "",
-				summary:
-					"",
+				summary: "",
 				preview: "",
 				techStack: [],
 			},
