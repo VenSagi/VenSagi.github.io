@@ -102,12 +102,12 @@ export default {
 			
 			{
 				projectName: "No Software Projects Yet",
-				image: "images/pizzaorderchatbot.png",
+				image: "",
 				summary:
-					"ChatBot using Dialogflow, Firebase database which stores the chat data in the realtime database.",
+					"",
 				preview:
-					"https://github.com/vinaysomawat/Pizza-Ordering-ChatBot",
-				techStack: ["Dailogflow", "Firebase"],
+					"",
+				techStack: [],
 			},
 			/*
 			{
@@ -153,11 +153,11 @@ export default {
 			
 			{
 				projectName: "No Freelance Projects Yet",
-				image: "images/snylloair.png",
+				image: "",
 				summary:
-					"Developed a company website to showcase the purpose, services and products provided by the company to audience.",
-				preview: "https://www.snylloair.com/",
-				techStack: ["Bootstrap", "JavaScript", "AWS-S3"],
+					"",
+				preview: "",
+				techStack: [],
 			},
 			/*
 			{
