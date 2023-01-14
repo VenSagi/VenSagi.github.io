@@ -143,6 +143,7 @@ export default {
 				preview: "https://github.com/vinaysomawat/NITW-CSE",
 				techStack: ["GML", "GameMaker Studio 2", "PC"],
 			},
+			/*
 			{
 				projectName: "CareerHigh-App",
 				image: "images/carrerhigh.png",
@@ -151,7 +152,7 @@ export default {
 				preview: "https://github.com/vinaysomawat/CareerHigh-Android",
 				techStack: ["JAVA", "XML", "Android"],
 			},
-			
+			*/
 		],
 		freelance: [
 			
