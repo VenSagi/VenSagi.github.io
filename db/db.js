@@ -132,7 +132,7 @@ export default {
 			
 		],
 		android: [
-			/*
+			
 			{
 				projectName: "NITW-CSE",
 				image: "images/nitwcse.jpg",
@@ -149,7 +149,7 @@ export default {
 				preview: "https://github.com/vinaysomawat/CareerHigh-Android",
 				techStack: ["JAVA", "XML", "Android"],
 			},
-			*/
+			
 		],
 		freelance: [
 			/*
