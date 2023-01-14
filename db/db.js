@@ -152,7 +152,7 @@ export default {
 			
 		],
 		freelance: [
-			/*
+			
 			{
 				projectName: "SnylloAir.com",
 				image: "images/snylloair.png",
@@ -170,7 +170,7 @@ export default {
 					"https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
 				techStack: ["Android", "JAVA", "Play Store"],
 			},
-			*/
+			
 		],
 		
 	},
