@@ -128,10 +128,10 @@ export default {
 			
 			{
 				projectName: "Vio-Doo",
-				image: "images/nitwcse.jpg",
+				image: "images/viewdoo.jpg",
 				summary:
 					"Developed an endless rogue-like type video game using GameMaker Studio 2 along with GML (Game Maker Language)",
-				preview: "https://github.com/vinaysomawat/NITW-CSE",
+				preview: "",
 				techStack: ["GML", "GameMaker Studio 2", "PC"],
 			},
 			/*
