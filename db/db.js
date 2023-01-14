@@ -164,6 +164,7 @@ export default {
 				preview: "https://www.snylloair.com/",
 				techStack: ["Bootstrap", "JavaScript", "AWS-S3"],
 			},
+			/*
 			{
 				projectName: "Delivery+",
 				image: "images/AM-Logo-.png",
@@ -173,7 +174,7 @@ export default {
 					"https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
 				techStack: ["Android", "JAVA", "Play Store"],
 			},
-			
+			*/
 		],
 		
 	},
