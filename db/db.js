@@ -134,12 +134,12 @@ export default {
 		android: [
 			
 			{
-				projectName: "NITW-CSE",
+				projectName: "Vio-Doo",
 				image: "images/nitwcse.jpg",
 				summary:
-					"The Application display details of Department courses, reference books, research, publication and faculty profile.",
+					"Developed an endless rogue-like type video game using GameMaker Studio 2 along with GML (Game Maker Language)",
 				preview: "https://github.com/vinaysomawat/NITW-CSE",
-				techStack: ["JAVA", "XML", "Android"],
+				techStack: ["GML", "GameMaker Studio 2", "PC"],
 			},
 			{
 				projectName: "CareerHigh-App",
