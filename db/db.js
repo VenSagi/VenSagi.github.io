@@ -103,7 +103,7 @@ export default {
 			
 		],
 		software: [
-			/*
+			
 			{
 				projectName: "Pizza Ordering ChatBot",
 				image: "images/pizzaorderchatbot.png",
@@ -129,7 +129,7 @@ export default {
 				preview: "https://github.com/vinaysomawat/Bill-Generator",
 				techStack: ["Tkinter", "Openxlpy", "Python"],
 			},
-			*/
+			
 		],
 		android: [
 			/*
