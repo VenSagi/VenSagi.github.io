@@ -61,7 +61,7 @@ export default {
 	],
 	projects: {
 		web: [
-			/*
+			
 			{
 				projectName: "Programming Diaries",
 				image: "images/programmingdiaries.png",
@@ -100,7 +100,7 @@ export default {
 				preview: "https://vinaysomawat.github.io/Resume-Builder",
 				techStack: ["HTML", "Bootstrap", "JavaScript"],
 			},
-			*/
+			
 		],
 		software: [
 			/*
