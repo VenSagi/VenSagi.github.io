@@ -64,9 +64,9 @@ export default {
 			
 			{
 				projectName: "No Web Projects Yet",
-				//image: "",
-				//summary: "",
-				//preview: "",
+				image: "",
+				summary: "",
+				preview: "",
 				techStack: [],
 			},
 			/*
