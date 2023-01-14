@@ -61,6 +61,9 @@ export default {
 	],
 	projects: {
 		web: [
+			{
+				projectName: "No Web projects yet",
+			},
 			/*
 			{
 				projectName: "Programming Diaries",
@@ -103,6 +106,9 @@ export default {
 			*/
 		],
 		software: [
+			{
+				projectName: "No Software projects yet",
+			},
 			/*
 			{
 				projectName: "Pizza Ordering ChatBot",
@@ -132,6 +138,14 @@ export default {
 			*/
 		],
 		android: [
+			{
+				projectName: "View-Doo",
+				image: "images/nitwcse.jpg",
+				summary:
+					"Developed an endless rogue-like type video game with the GameMaker Studio 2 software along with GML (Game Maker Language)",
+				preview: "https://github.com/vinaysomawat/NITW-CSE",
+				techStack: ["GML", "GameMaker Studio 2", "PC"],
+			},
 			/*
 			{
 				projectName: "NITW-CSE",
@@ -152,6 +166,9 @@ export default {
 			*/
 		],
 		freelance: [
+			{
+				projectName: "No Freelance projects yet",
+			},
 			/*
 			{
 				projectName: "SnylloAir.com",
