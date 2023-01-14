@@ -5,7 +5,7 @@ export default {
 
 				"Howdy!",
 				"I'm Venkat Sagi, a Freshman Engineering student at Texas A&M University currently pursuing a degree in Computer Science. Aspiring programmer passionate About backend web development. Through my coding experience and programming skills, I aim to learn and do great things in the computer science field.",
-				"I'm a developer, seeking an internship opportunity at to gain practical experience and further develop my skills in the field of backend development.",
+				"I'm a developer, seeking an internship opportunity to gain practical experience and further develop my skills in the field of backend development.",
 				"I love to do art, play video-games, and travel.",
 			],
 		},
