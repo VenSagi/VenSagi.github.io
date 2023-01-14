@@ -76,6 +76,7 @@ export default {
 					"Heroku",
 				],
 			},
+			/*
 			{
 				projectName: "Find Your Bank",
 				image: "images/findyourbank.png",
@@ -100,7 +101,7 @@ export default {
 				preview: "https://vinaysomawat.github.io/Resume-Builder",
 				techStack: ["HTML", "Bootstrap", "JavaScript"],
 			},
-			
+			*/
 		],
 		software: [
 			
