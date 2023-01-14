@@ -114,6 +114,7 @@ export default {
 					"https://github.com/vinaysomawat/Pizza-Ordering-ChatBot",
 				techStack: ["Dailogflow", "Firebase"],
 			},
+			/*
 			{
 				projectName: "WhatsApp-Bot",
 				image: "images/whatsappbot.jpg",
@@ -130,7 +131,7 @@ export default {
 				preview: "https://github.com/vinaysomawat/Bill-Generator",
 				techStack: ["Tkinter", "Openxlpy", "Python"],
 			},
-			
+			*/
 		],
 		android: [
 			
