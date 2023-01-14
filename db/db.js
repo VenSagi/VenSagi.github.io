@@ -64,16 +64,11 @@ export default {
 			
 			{
 				projectName: "No Web Projects Yet",
-				image: "images/programmingdiaries.png",
+				image: "",
 				summary:
-					"Developed a full stack blog application to provide content on techical topics across the internet with admin interface.",
-				preview: "https://programmingdiaries.herokuapp.com/",
+					"",
+				preview: "",
 				techStack: [
-					"Django",
-					"SQLite",
-					"Bootstrap",
-					"JavaScript",
-					"Heroku",
 				],
 			},
 			/*
