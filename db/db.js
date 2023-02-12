@@ -63,11 +63,11 @@ export default {
 		web: [
 			
 			{
-				projectName: "No Web Projects Yet",
-				image: "",
-				summary: "",
-				preview: "",
-				techStack: [],
+				projectName: "Weather Checker",
+				image: "images/WeatherChecker.jpg",
+				summary: "Developed an interactive weather checker application using Django, Python, and the OpenWeatherMap API. The application allows users to check the current weather conditions for any city in the world. Implemented the back-end functionality for retrieving and displaying real-time weather information from the API",
+				preview: "https://github.com/VenSagi/WeatherChecker",
+				techStack: ["Django", "Python", "API"],
 			},
 			/*
 			{
