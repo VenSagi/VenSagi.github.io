@@ -1117,19 +1117,265 @@ body.offcanvas #colorlib-aside {
   color: #fff;
 }
 
-/* Contact icons */
-.colorlib-feature .colorlib-icon {
-  background: var(--dm-surface-2);
-  border: 1px solid var(--dm-border);
+/* Contact — icon squares; text slides right on hover. Row height = icon only (no tall reveal gap). */
+.colorlib-contact .contact-rows-wrap {
+  --contact-icon-size: 10.35rem;
+  /* Same width for both email + location panels (not content-sized) */
+  --contact-reveal-width: min(30rem, calc(100vw - var(--contact-icon-size) - 1.5rem));
+  display: flow-root;
+  width: 100%;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: 0;
+  overflow: visible;
+  clear: both;
 }
 
-.colorlib-feature .colorlib-text h3 {
-  color: var(--dm-text-muted) !important;
+/* One column, no gap — rows share one divider (no space between email / location) */
+.colorlib-contact .contact-rows {
+  display: grid;
+  grid-template-columns: minmax(0, max-content);
+  grid-auto-rows: auto;
+  row-gap: 0;
+  column-gap: 0;
+  gap: 0;
+  width: max-content;
+  max-width: 100%;
 }
 
-.colorlib-feature .colorlib-text p,
-.colorlib-feature .colorlib-text a {
+.colorlib-contact .contact-hover-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  /* Lock row height to icon — stops multi-line reveal from pushing rows apart */
+  height: var(--contact-icon-size);
+  min-height: var(--contact-icon-size);
+  max-height: var(--contact-icon-size);
+  position: relative;
+  z-index: 1;
+}
+
+/* Divider only under the first icon — NOT a full-width row border (that caused the long stray line) */
+.colorlib-contact .contact-hover-row:not(:last-child) .contact-icon-square {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.colorlib-contact .contact-hover-row + .contact-hover-row .contact-icon-square {
+  border-top: none;
+}
+
+.colorlib-contact .contact-hover-row:focus-visible {
+  z-index: 2;
+  outline: 2px solid var(--dm-accent);
+  outline-offset: 1px;
+}
+
+.colorlib-contact .contact-icon-square {
+  flex: 0 0 var(--contact-icon-size);
+  width: var(--contact-icon-size);
+  height: var(--contact-icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease;
+  transform: translateZ(0);
+}
+
+.colorlib-contact .contact-icon-square i {
+  font-size: 2.65rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1;
+}
+
+.colorlib-contact .contact-reveal {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 0;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  border: 1px solid transparent;
+  border-left: none;
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    width 0.32s ease,
+    max-width 0.32s ease,
+    opacity 0.26s ease,
+    padding 0.32s ease,
+    border-color 0.2s ease,
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.colorlib-contact .contact-reveal p {
+  margin: 0;
+  width: 100%;
+  font-size: clamp(1.2rem, 2.15vw, 1.48rem);
+  line-height: 1.5;
   color: var(--dm-text-soft);
+  text-align: center;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.colorlib-contact .contact-reveal a {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  color: var(--dm-accent);
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.colorlib-contact .contact-reveal a:hover,
+.colorlib-contact .contact-reveal a:focus {
+  color: var(--dm-accent-hover);
+}
+
+/* Keyboard / focus-within: always expand so links are reachable */
+.colorlib-contact .contact-hover-row:focus-within .contact-icon-square {
+  border-right-color: transparent;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.colorlib-contact .contact-hover-row:focus-within .contact-reveal {
+  width: var(--contact-reveal-width);
+  max-width: var(--contact-reveal-width);
+  opacity: 1;
+  padding: 0.55rem 1rem;
+  border-color: rgba(255, 255, 255, 0.09);
+  border-left: 1px solid rgba(255, 255, 255, 0.09);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorlib-contact .contact-hover-row:hover .contact-icon-square {
+    border-right-color: transparent;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+    box-shadow:
+      inset 0 5px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 3px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .colorlib-contact .contact-hover-row:hover .contact-reveal {
+    width: var(--contact-reveal-width);
+    max-width: var(--contact-reveal-width);
+    opacity: 1;
+    padding: 0.55rem 1rem;
+    border-color: rgba(255, 255, 255, 0.09);
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+    box-shadow:
+      inset 0 5px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 3px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  }
+}
+
+.colorlib-contact .contact-hover-row:active .contact-icon-square {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  box-shadow:
+    inset 0 7px 14px rgba(0, 0, 0, 0.6),
+    inset 0 3px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Touch / coarse pointer: keep text visible (no hover) */
+@media (hover: none), (pointer: coarse) {
+  .colorlib-contact .contact-rows-wrap {
+    --contact-reveal-width: min(30rem, calc(100% - var(--contact-icon-size) - 0.5rem));
+  }
+
+  .colorlib-contact .contact-icon-square {
+    border-right-color: transparent;
+  }
+
+  .colorlib-contact .contact-reveal {
+    width: var(--contact-reveal-width);
+    max-width: var(--contact-reveal-width);
+    opacity: 1;
+    padding: 0.55rem 1rem;
+    border-color: rgba(255, 255, 255, 0.09);
+    border-left: 1px solid rgba(255, 255, 255, 0.09);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.28) 0%,
+      rgba(0, 0, 0, 0.12) 100%
+    );
+    box-shadow:
+      inset 0 4px 8px rgba(0, 0, 0, 0.45),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.4),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorlib-contact .contact-reveal,
+  .colorlib-contact .contact-icon-square {
+    transition-duration: 0.12s;
+  }
 }
 
 /* Work / projects */
