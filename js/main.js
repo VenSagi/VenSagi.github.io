@@ -268,6 +268,55 @@
 
 	};
 
+	var careerTabs = function () {
+		var $tabs = $('.career-tabs');
+		if (!$tabs.length) {
+			return;
+		}
+
+		function activate(name) {
+			$tabs.find('.career-tab-btn').each(function () {
+				var $b = $(this);
+				var active = $b.data('career-tab') === name;
+				$b.toggleClass('is-active', active);
+				$b.attr('aria-selected', active ? 'true' : 'false');
+			});
+			$('#career-panel-experience').prop('hidden', name !== 'experience');
+			$('#career-panel-education').prop('hidden', name !== 'education');
+		}
+
+		$tabs.on('click', '.career-tab-btn', function () {
+			var name = $(this).data('career-tab');
+			if (name) {
+				activate(name);
+			}
+		});
+
+		activate('experience');
+	};
+
+	var projectsMoreToggle = function () {
+		var $btn = $('#projects-more-toggle');
+		var $region = $('#projects-more-region');
+		if (!$btn.length || !$region.length) return;
+		$btn.on('click', function () {
+			var expanded = $btn.attr('aria-expanded') === 'true';
+			if (expanded) {
+				$region.prop('hidden', true);
+				$btn.attr('aria-expanded', 'false');
+				$btn.text('More projects');
+			} else {
+				$region.prop('hidden', false);
+				$btn.attr('aria-expanded', 'true');
+				$btn.text('Show fewer projects');
+				var el = $region.get(0);
+				if (el && typeof el.scrollIntoView === 'function') {
+					el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+				}
+			}
+		});
+	};
+
 	var owlCrouselFeatureSlide = function() {
 		$('.owl-carousel').owlCarousel({
 			animateOut: 'fadeOut',
@@ -297,6 +346,8 @@
 		clickMenu();
 		// navActive();
 		navigationSection();
+		careerTabs();
+		projectsMoreToggle();
 		// windowScroll();
 
 

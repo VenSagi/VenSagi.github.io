@@ -179,6 +179,9 @@ body.offcanvas #colorlib-aside {
     background 0.16s ease,
     box-shadow 0.16s ease;
   transform: translateZ(0);
+  /* Same default as About / Skills grids: clear fill + light top edge */
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 /*
@@ -325,11 +328,9 @@ body.offcanvas #colorlib-aside {
     background 0.16s ease,
     box-shadow 0.16s ease;
   transform: translateZ(0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.06) 100%
-  );
+  /* Match hero unlit cells: no fill — grid lines only; subtle top edge so default ≠ pressed */
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 
 .colorlib-about .about-grid-cell:nth-child(4n) {
@@ -342,6 +343,7 @@ body.offcanvas #colorlib-aside {
     rgba(0, 0, 0, 0.34) 0%,
     rgba(0, 0, 0, 0.14) 100%
   );
+  /* Replace flat top highlight with full pressed stack */
   box-shadow:
     inset 0 5px 10px rgba(0, 0, 0, 0.5),
     inset 0 2px 3px rgba(0, 0, 0, 0.35),
@@ -419,6 +421,565 @@ body.offcanvas #colorlib-aside {
   font-size: 1.65rem;
 }
 
+/* Skills: 4×2 interactive grid + Simple Icons (monochrome on dark) */
+.colorlib-skills .skills-grid-wrap {
+  display: block;
+  max-width: min(52rem, 100%);
+}
+
+.colorlib-skills .skills-grid-cells {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  pointer-events: auto;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.colorlib-skills .skills-grid-cell {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  margin: 0;
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+  transform: translateZ(0);
+  /* Same as hero / About: empty cells + light top edge; hover adds dark pressed fill */
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.colorlib-skills .skills-grid-cell:nth-child(4n) {
+  border-right: none;
+}
+
+.colorlib-skills .skills-grid-cell:nth-child(n + 5) {
+  border-bottom: none;
+}
+
+.colorlib-skills .skills-grid-cell.skills-grid-cell--lit {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.colorlib-skills .skills-grid-cell.skills-grid-cell--lit:active {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  box-shadow:
+    inset 0 7px 14px rgba(0, 0, 0, 0.6),
+    inset 0 3px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorlib-skills .skills-grid-cell {
+    transition: background 0.12s ease, box-shadow 0.12s ease;
+  }
+}
+
+.colorlib-skills .skills-grid-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.55rem;
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem 0.5rem;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.colorlib-skills .skills-tech-icon {
+  width: clamp(2.1rem, 5.2vw, 2.85rem);
+  height: auto;
+  opacity: 0.88;
+  filter: brightness(0) invert(1);
+}
+
+.colorlib-skills .skills-name {
+  display: block;
+  font-size: clamp(0.72rem, 1.85vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dm-text-soft);
+  line-height: 1.2;
+}
+
+@media screen and (max-width: 480px) {
+  .colorlib-skills .skills-grid-cells {
+    aspect-ratio: unset;
+    min-height: 14rem;
+  }
+}
+
+/* Projects — same grid-cell language as Skills; image is a small top preview on hover */
+.colorlib-work .projects-grid-wrap {
+  display: block;
+  max-width: min(72rem, 100%);
+  margin-bottom: 1.75rem;
+}
+
+/* Align with .projects-grid-wrap (no horizontal auto — that was centering the bar vs the grids) */
+.colorlib-work .projects-more-actions {
+  display: flex;
+  justify-content: flex-start;
+  max-width: min(72rem, 100%);
+  margin: 0.35rem 0 1.35rem;
+}
+
+.colorlib-work .projects-more-btn {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: var(--dm-accent);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 0;
+  padding: 0.9rem 1.85rem;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
+  transform: translateZ(0);
+}
+
+/* Same “pressed” surface as .project-grid-cell:hover .project-grid-content */
+.colorlib-work .projects-more-btn:focus-visible {
+  color: var(--dm-accent-hover);
+  outline: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorlib-work .projects-more-btn:hover {
+    color: var(--dm-accent-hover);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+    box-shadow:
+      inset 0 5px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 3px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* Match skills / grid :active “deeper press” */
+.colorlib-work .projects-more-btn:active {
+  color: var(--dm-accent-hover);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+  box-shadow:
+    inset 0 7px 14px rgba(0, 0, 0, 0.6),
+    inset 0 3px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.55),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+.colorlib-work .projects-more-region:not([hidden]) {
+  animation: colorlib-projects-more-open 0.38s ease;
+}
+
+@keyframes colorlib-projects-more-open {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorlib-work .projects-more-region:not([hidden]) {
+    animation: none;
+  }
+}
+
+.colorlib-work .projects-grid-cells {
+  display: grid;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.colorlib-work .projects-grid-cells--four {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 2 columns → wider cards, easier to read body copy (was 3×2 + 1) */
+.colorlib-work .projects-grid-cells--five {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.colorlib-work .project-grid-cell {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 18.5rem;
+  min-width: 0;
+  margin: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+  transform: translateZ(0);
+}
+
+.colorlib-work .projects-grid-cells--four .project-grid-cell:nth-child(2n) {
+  border-right: none;
+}
+
+.colorlib-work .projects-grid-cells--four .project-grid-cell:nth-child(n + 3) {
+  border-bottom: none;
+}
+
+.colorlib-work .projects-grid-cells--five .project-grid-cell:nth-child(2n) {
+  border-right: none;
+}
+
+.colorlib-work .projects-grid-cells--five .project-grid-cell:nth-child(5) {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+
+.colorlib-work .projects-grid-cells--five .project-grid-cell:last-child {
+  border-bottom: none;
+}
+
+.colorlib-work .project-grid-preview {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  width: 100%;
+  height: 0;
+  min-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-bottom: 1px solid transparent;
+  transition:
+    height 0.28s ease,
+    min-height 0.28s ease,
+    opacity 0.28s ease,
+    border-color 0.28s ease;
+  pointer-events: none;
+}
+
+.colorlib-work .project-grid-preview img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Pressed state on text block only — keeps the image strip clear (no full-cell tint) */
+  .colorlib-work .project-grid-cell:hover .project-grid-content,
+  .colorlib-work .project-grid-cell:focus-within .project-grid-content {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.34) 0%,
+      rgba(0, 0, 0, 0.14) 100%
+    );
+    box-shadow:
+      inset 0 5px 10px rgba(0, 0, 0, 0.5),
+      inset 0 2px 3px rgba(0, 0, 0, 0.35),
+      inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .colorlib-work .project-grid-cell:hover .project-grid-preview,
+  .colorlib-work .project-grid-cell:focus-within .project-grid-preview {
+    height: 8rem;
+    min-height: 8rem;
+    opacity: 1;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .colorlib-work .project-grid-preview {
+    height: 4.75rem;
+    min-height: 4.75rem;
+    opacity: 1;
+    border-bottom-color: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorlib-work .project-grid-cell,
+  .colorlib-work .project-grid-preview,
+  .colorlib-work .project-grid-content,
+  .colorlib-work .projects-more-btn {
+    transition-duration: 0.12s;
+  }
+}
+
+.colorlib-work .project-grid-content {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  min-height: 15.5rem;
+  padding: 1.45rem 1.45rem 1.55rem;
+  box-sizing: border-box;
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease;
+}
+
+.colorlib-work .project-grid-title {
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: clamp(1.05rem, 2.15vw, 1.3rem);
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.32;
+  color: var(--dm-text);
+}
+
+.colorlib-work .project-grid-title a {
+  color: var(--dm-accent);
+}
+
+.colorlib-work .project-grid-title a:hover,
+.colorlib-work .project-grid-title a:focus {
+  color: var(--dm-accent-hover);
+}
+
+.colorlib-work .project-grid-meta {
+  display: block;
+  font-size: clamp(0.92rem, 1.55vw, 1.05rem);
+  line-height: 1.52;
+  color: var(--dm-text-soft);
+}
+
+.colorlib-work .project-grid-desc {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.85vw, 1.15rem);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media screen and (max-width: 767px) {
+  .colorlib-work .projects-grid-cells--four,
+  .colorlib-work .projects-grid-cells--five {
+    grid-template-columns: 1fr;
+  }
+
+  .colorlib-work .projects-grid-cells--five .project-grid-cell:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .colorlib-work .projects-grid-cells--four .project-grid-cell,
+  .colorlib-work .projects-grid-cells--five .project-grid-cell {
+    border-right: none !important;
+  }
+
+  .colorlib-work .projects-grid-cells--four .project-grid-cell:not(:last-child),
+  .colorlib-work .projects-grid-cells--five .project-grid-cell:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  }
+
+  .colorlib-work .projects-grid-cells--four .project-grid-cell:last-child,
+  .colorlib-work .projects-grid-cells--five .project-grid-cell:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Education & Experience — square tab switcher (1×2) w/ icons, same “grid cell” language */
+/* Align tab strip with timeline-label cards (matches style.css entry + inner offsets + label margin) */
+.colorlib-career .career-tabs {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  padding-left: calc(30px - 20px + 48px);
+  box-sizing: border-box;
+}
+
+.colorlib-career .career-tabs-cells {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(19rem, 100%);
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.colorlib-career .career-tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  padding: 0.45rem 0.4rem;
+  color: var(--dm-text-soft);
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    background 0.16s ease,
+    box-shadow 0.16s ease,
+    color 0.16s ease;
+  transform: translateZ(0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 0;
+  min-height: 0;
+}
+
+.colorlib-career .career-tab-btn:first-of-type {
+  border-right: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.colorlib-career .career-tab-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.colorlib-career .career-tab-icon i {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.colorlib-career .career-tab-btn.is-active .career-tab-icon i {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.colorlib-career .career-tab-text {
+  display: block;
+  text-align: center;
+  max-width: 100%;
+}
+
+.colorlib-career .career-tab-btn.is-active {
+  color: var(--dm-text);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.colorlib-career .career-tab-btn:hover:not(.is-active) {
+  color: var(--dm-text);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.34) 0%,
+    rgba(0, 0, 0, 0.14) 100%
+  );
+  box-shadow:
+    inset 0 5px 10px rgba(0, 0, 0, 0.5),
+    inset 0 2px 3px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.45),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.colorlib-career .career-tab-btn:hover:not(.is-active) .career-tab-icon i {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.colorlib-career .career-tab-btn.is-active:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+.colorlib-career .career-tab-btn:focus-visible {
+  outline: 2px solid var(--dm-accent);
+  outline-offset: 2px;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .colorlib-career .career-tab-btn {
+    transition: background 0.12s ease, box-shadow 0.12s ease, color 0.12s ease;
+  }
+}
+
 /* Education accordion */
 .panel-heading a.collapsed {
   background: var(--dm-surface-2) !important;
@@ -475,6 +1036,78 @@ body.offcanvas #colorlib-aside {
   color: var(--dm-text-soft);
 }
 
+/* Career — compact timeline (work + education panels) */
+.colorlib-career .timeline-centered {
+  margin-bottom: 1.25rem;
+}
+
+.colorlib-career .timeline-centered:before {
+  width: 3px;
+  margin-left: 25px;
+  top: 16px;
+  bottom: 16px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry {
+  margin-bottom: 6px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  box-shadow: 0 0 0 4px var(--dm-bg-main);
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon:not(.color-none) {
+  background: #2563b8;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
+  font-size: 15px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-none {
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+  padding: 0.95em 1em;
+  margin-left: 48px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+  border-width: 7px 7px 7px 0;
+  margin-left: -7px;
+  top: 8px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p + p {
+  margin-top: 0.65rem;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
+  font-size: 16px;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 span {
+  font-size: 13px;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.colorlib-career .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p strong {
+  color: var(--dm-accent);
+  font-weight: 600;
+}
+
 /* Progress */
 .progress {
   background: var(--dm-surface-2);
@@ -506,20 +1139,6 @@ body.offcanvas #colorlib-aside {
 
 .work-menu span a.active {
   color: var(--dm-accent);
-}
-
-/* Hover overlay stays template blue; tune link contrast on overlay */
-.project .desc span a {
-  color: rgba(255, 255, 255, 0.95);
-}
-
-@media screen and (max-width: 768px) {
-  .project .desc {
-    background: rgba(15, 23, 35, 0.75) !important;
-  }
-  .project .desc h3 {
-    color: var(--dm-text) !important;
-  }
 }
 
 /* Forms */
