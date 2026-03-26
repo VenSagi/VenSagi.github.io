@@ -302,6 +302,9 @@
 
 		mobileMenuOutsideClick();
 		sliderMain();
+		if (typeof window.heroInteractiveGridRebuild === 'function') {
+			setTimeout(window.heroInteractiveGridRebuild, 150);
+		}
 		stickyFunction();
 		owlCrouselFeatureSlide();
 	});

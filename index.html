@@ -92,9 +92,10 @@
 			<section id="colorlib-hero" class="js-fullheight" data-section="home">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
+				   	<li class="hero-slide-grid">
+				   		<div class="hero-grid-cells" id="hero-grid-cells" aria-hidden="true"></div>
 				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
+				   		<div class="container-fluid hero-grid-content">
 				   			<div class="row">
 					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
 					   				<div class="slider-text-inner js-fullheight">
@@ -820,8 +821,8 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
-	
-	
+	<!-- Hero interactive grid (pointer / hover cells) -->
+	<script src="js/hero-interactive-grid.js"></script>
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
