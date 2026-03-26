@@ -1,0 +1,318 @@
+/* Dark mode — layered slate + cool accent (loads after style.css) */
+html {
+  color-scheme: dark;
+}
+
+:root {
+  --dm-bg: #0b0e12;
+  --dm-bg-main: #0e1218;
+  --dm-surface: #141a22;
+  --dm-surface-2: #1a222d;
+  --dm-border: rgba(255, 255, 255, 0.08);
+  --dm-text: rgba(255, 255, 255, 0.9);
+  --dm-text-soft: rgba(255, 255, 255, 0.65);
+  --dm-text-muted: rgba(255, 255, 255, 0.45);
+  --dm-accent: #5eb0ff;
+  --dm-accent-hover: #7cc4ff;
+}
+
+body {
+  background: var(--dm-bg);
+  color: var(--dm-text-soft);
+}
+
+body,
+#colorlib-page {
+  background: var(--dm-bg);
+}
+
+a {
+  color: var(--dm-accent);
+}
+a:hover,
+a:active,
+a:focus {
+  color: var(--dm-accent-hover);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dm-text);
+}
+
+p strong {
+  color: var(--dm-text);
+}
+
+/* Sidebar */
+#colorlib-aside {
+  background: var(--dm-surface);
+  border-right: 1px solid var(--dm-border);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.35);
+}
+
+#colorlib-aside #colorlib-logo a {
+  color: var(--dm-text);
+}
+
+#colorlib-aside .position {
+  color: var(--dm-text-muted);
+}
+
+#colorlib-aside #colorlib-main-menu ul li a {
+  color: var(--dm-text-soft);
+}
+
+#colorlib-aside #colorlib-main-menu ul li a:hover {
+  color: var(--dm-text);
+}
+
+#colorlib-aside #colorlib-main-menu ul li.active a {
+  color: var(--dm-accent);
+}
+
+#colorlib-aside #colorlib-main-menu ul li a:after {
+  background-color: var(--dm-accent);
+}
+
+#colorlib-aside .colorlib-footer {
+  color: var(--dm-text-muted);
+}
+
+#colorlib-aside .colorlib-footer a {
+  color: var(--dm-accent);
+}
+
+#colorlib-aside .colorlib-footer ul li a {
+  color: var(--dm-text-muted);
+}
+
+#colorlib-aside .colorlib-footer ul li a:hover {
+  color: var(--dm-accent);
+}
+
+body.offcanvas #colorlib-aside {
+  background: var(--dm-surface);
+}
+
+/* Main column */
+#colorlib-main {
+  background: var(--dm-bg-main);
+}
+
+#colorlib-hero {
+  background-color: var(--dm-bg-main);
+  background-image: none;
+}
+
+/* Hero slide overlay — improves text contrast on photos */
+#colorlib-hero .flexslider .slides li {
+  position: relative;
+}
+
+#colorlib-hero .flexslider .slides li .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    120deg,
+    rgba(8, 11, 16, 0.82) 0%,
+    rgba(8, 11, 16, 0.45) 55%,
+    rgba(8, 11, 16, 0.65) 100%
+  );
+}
+
+#colorlib-hero .flexslider .slider-text {
+  position: relative;
+  z-index: 9;
+}
+
+#colorlib-hero .flexslider .slider-text > .slider-text-inner h1,
+#colorlib-hero .flexslider .slider-text > .slider-text-inner h2 {
+  color: var(--dm-text);
+}
+
+#colorlib-hero .flexslider .slider-text > .slider-text-inner h2 a {
+  color: rgba(94, 176, 255, 0.95);
+  border-bottom-color: rgba(94, 176, 255, 0.5);
+}
+
+#colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
+  color: var(--dm-text);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+#colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn:hover {
+  border-color: var(--dm-accent) !important;
+  color: var(--dm-accent);
+}
+
+/* Section copy */
+.heading-meta {
+  color: var(--dm-text-muted);
+}
+
+.about-desc p,
+.colorlib-skills p,
+.colorlib-about p {
+  color: var(--dm-text-soft);
+}
+
+/* About service tiles */
+.services {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
+}
+
+.services h3 {
+  color: var(--dm-text);
+}
+
+/* Education accordion */
+.panel-heading a.collapsed {
+  background: var(--dm-surface-2) !important;
+  border: 1px solid var(--dm-border) !important;
+  color: var(--dm-text-soft) !important;
+}
+
+.panel-heading a:not(.collapsed) {
+  background-color: #2563b8 !important;
+  color: #fff !important;
+}
+
+.panel-body {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border) !important;
+  color: var(--dm-text-soft);
+}
+
+.panel-body p {
+  color: var(--dm-text-soft);
+}
+
+/* Timeline */
+.timeline-centered:before {
+  background: var(--dm-surface-2);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon {
+  box-shadow: 0 0 0 5px var(--dm-bg-main);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon.color-none {
+  background: var(--dm-surface-2);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
+  background: var(--dm-surface);
+  border: 1px solid var(--dm-border);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
+  border-color: transparent var(--dm-surface) transparent transparent;
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
+  color: var(--dm-text);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
+  color: var(--dm-text);
+}
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label p {
+  color: var(--dm-text-soft);
+}
+
+/* Progress */
+.progress {
+  background: var(--dm-surface-2);
+}
+
+.progress-bar {
+  color: #fff;
+}
+
+/* Contact icons */
+.colorlib-feature .colorlib-icon {
+  background: var(--dm-surface-2);
+  border: 1px solid var(--dm-border);
+}
+
+.colorlib-feature .colorlib-text h3 {
+  color: var(--dm-text-muted) !important;
+}
+
+.colorlib-feature .colorlib-text p,
+.colorlib-feature .colorlib-text a {
+  color: var(--dm-text-soft);
+}
+
+/* Work / projects */
+.work-menu span a {
+  color: var(--dm-text-soft);
+}
+
+.work-menu span a.active {
+  color: var(--dm-accent);
+}
+
+/* Hover overlay stays template blue; tune link contrast on overlay */
+.project .desc span a {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+@media screen and (max-width: 768px) {
+  .project .desc {
+    background: rgba(15, 23, 35, 0.75) !important;
+  }
+  .project .desc h3 {
+    color: var(--dm-text) !important;
+  }
+}
+
+/* Forms */
+.form-control {
+  background: var(--dm-surface) !important;
+  border: 1px solid var(--dm-border) !important;
+  color: var(--dm-text);
+}
+
+.form-control::placeholder {
+  color: var(--dm-text-muted);
+}
+
+.form-control:active,
+.form-control:focus {
+  background: var(--dm-surface-2) !important;
+  border-color: var(--dm-accent) !important;
+}
+
+/* Mobile menu button — visible on dark content */
+.colorlib-nav-toggle i,
+.colorlib-nav-toggle i::before,
+.colorlib-nav-toggle i::after {
+  background: var(--dm-text);
+  color: var(--dm-text);
+}
+
+.colorlib-nav-toggle.active i::before,
+.colorlib-nav-toggle.active i::after {
+  background: var(--dm-text);
+}
+
+/* Selection */
+::-webkit-selection {
+  background: rgba(94, 176, 255, 0.35);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(94, 176, 255, 0.35);
+  color: #fff;
+}
+
+::selection {
+  background: rgba(94, 176, 255, 0.35);
+  color: #fff;
+}
